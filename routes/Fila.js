@@ -3,9 +3,9 @@ const router = express.Router();
 const { filas } = require('../data');
 
 router.post('/', (req, res) => {
-    const { numero_fila, id_sala } = req.body;
+    const { numero_fila, id_localidad } = req.body;
     const id = filas.length + 1;
-    const nuevaFila = { id, numero_fila, id_sala };
+    const nuevaFila = { id, numero_fila, id_localidad };
     filas.push(nuevaFila);
     res.send(nuevaFila);
 });
@@ -26,7 +26,7 @@ router.put('/:id', (req, res) => {
         return res.status(404).send('Fila no encontrada');
     }
     fila.numero_fila = req.body.numero_fila;
-    fila.id_sala = req.body.id_sala;
+    fila.id_localidad = req.body.id_localidad;
     res.send(fila);
 });
 

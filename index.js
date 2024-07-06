@@ -5,9 +5,9 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-const boletaRoutes = require('./routes/Boleta');
+const localidadRoutes = require('./routes/Localidad');
 const clienteRoutes = require('./routes/Cliente');
-const detalleVentaRoutes = require('./routes/Detalle_venta');
+const lfRoutes = require('./routes/Localidad_funcion');
 const filaRoutes = require('./routes/Fila');
 const funcionRoutes = require('./routes/Funcion');
 const peliculaRoutes = require('./routes/Pelicula');
@@ -19,9 +19,9 @@ const ventaRoutes = require('./routes/Venta');
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use('/boletas', boletaRoutes);
+app.use('/localidades', localidadRoutes);
 app.use('/clientes', clienteRoutes);
-app.use('/detalles_venta', detalleVentaRoutes);
+app.use('/localidad_funcion', lfRoutes);
 app.use('/filas', filaRoutes);
 app.use('/funciones', funcionRoutes);
 app.use('/peliculas', peliculaRoutes);

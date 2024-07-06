@@ -3,9 +3,9 @@ const router = express.Router();
 const { funciones } = require('../data');
 
 router.post('/', (req, res) => {
-    const { hora_funcion, fecha_funcion, id_Pelicula, id_Sala } = req.body;
+    const { hora_funcion, fecha_funcion, id_Pelicula } = req.body;
     const id = funciones.length + 1;
-    const nuevaFuncion = { id, hora_funcion, fecha_funcion, id_Pelicula, id_Sala };
+    const nuevaFuncion = { id, hora_funcion, fecha_funcion, id_Pelicula };
     funciones.push(nuevaFuncion);
     res.send(nuevaFuncion);
 });
@@ -28,7 +28,6 @@ router.put('/:id', (req, res) => {
     funcion.hora_funcion = req.body.hora_funcion;
     funcion.fecha_funcion = req.body.fecha_funcion;
     funcion.id_Pelicula = req.body.id_Pelicula;
-    funcion.id_Sala = req.body.id_Sala;
     res.send(funcion);
 });
 

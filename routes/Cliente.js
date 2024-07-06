@@ -3,9 +3,9 @@ const router = express.Router();
 const { clientes } = require('../data');
 
 router.post('/', (req, res) => {
-    const { nombre, apellido, edad } = req.body;
+    const { nombre, apellido } = req.body;
     const id = clientes.length + 1;
-    const nuevoCliente = { id, nombre, apellido, edad };
+    const nuevoCliente = { id, nombre, apellido };
     clientes.push(nuevoCliente);
     res.send(nuevoCliente);
 });
@@ -27,7 +27,6 @@ router.put('/:id', (req, res) => {
     }
     cliente.nombre = req.body.nombre;
     cliente.apellido = req.body.apellido;
-    cliente.edad = req.body.edad;
     res.send(cliente);
 });
 

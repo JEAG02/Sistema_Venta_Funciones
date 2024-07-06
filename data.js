@@ -1,6 +1,6 @@
-let boletas = [];
+let localidades = [];
 let clientes = [];
-let detallesVenta = [];
+let Lf = [];
 let filas = [];
 let funciones = [];
 let peliculas = [];
@@ -10,9 +10,9 @@ let taquilleros = [];
 let ventas = [];
 
 module.exports = {
-    boletas,
+    localidades,
     clientes,
-    detallesVenta,
+    Lf,
     filas,
     funciones,
     peliculas,

@@ -3,9 +3,9 @@ const router = express.Router();
 const { salas } = require('../data');
 
 router.post('/', (req, res) => {
-    const { numero, cantidad_sillas } = req.body;
+    const { nombre, cantidad_sillas } = req.body;
     const id = salas.length + 1;
-    const nuevaSala = { id, numero, cantidad_sillas };
+    const nuevaSala = { id, nombre, cantidad_sillas };
     salas.push(nuevaSala);
     res.send(nuevaSala);
 });
@@ -25,7 +25,7 @@ router.put('/:id', (req, res) => {
     if (!sala) {
         return res.status(404).send('Sala no encontrada');
     }
-    sala.numero = req.body.numero;
+    sala.nombre = req.body.nombre;
     sala.cantidad_sillas = req.body.cantidad_sillas;
     res.send(sala);
 });
